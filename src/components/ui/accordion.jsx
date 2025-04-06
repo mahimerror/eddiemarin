@@ -8,11 +8,7 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 const Accordion = AccordionPrimitive.Root;
 
 const AccordionItem = React.forwardRef(({ className, ...props }, ref) => (
-  <AccordionPrimitive.Item
-    ref={ref}
-    className={cn("border-b", className)}
-    {...props}
-  />
+  <AccordionPrimitive.Item ref={ref} className={cn("", className)} {...props} />
 ));
 AccordionItem.displayName = "AccordionItem";
 
@@ -22,14 +18,16 @@ const AccordionTrigger = React.forwardRef(
       <AccordionPrimitive.Trigger
         ref={ref}
         className={cn(
-          "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+          "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline group [&[data-state=open]]:border",
           className
         )}
         {...props}
       >
         {children}
-        <FaPlus className="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[state=open]:hidden" />
-        <FaMinus className="h-4 w-4 shrink-0 transition-transform duration-200 hidden group-data-[state=open]:block" />
+        <div className="relative size-9 rounded-full shrink-0 border border-[#0B0B0B] text-[#0B0B0B] group-data-[state=open]:text-white bg-transparent group-data-[state=open]:bg-primary group-data-[state=open]:border-primary transition-colors duration-300">
+          <FaPlus className="absolute size-[18px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 group-data-[state=closed]:opacity-100 group-data-[state=closed]:rotate-0 group-data-[state=open]:opacity-0 group-data-[state=open]:rotate-180   " />
+          <FaMinus className="absolute size-[18px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 group-data-[state=closed]:opacity-0 group-data-[state=closed]:-rotate-180 group-data-[state=open]:opacity-100 group-data-[state=open]:rotate-0" />
+        </div>
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )
