@@ -1,48 +1,49 @@
+import {
+  ChooseIcon1,
+  ChooseIcon2,
+  ChooseIcon3,
+  ChooseIcon4,
+  ChooseIcon5,
+  ChooseIcon6,
+} from "@/assets/Icons";
 import Container from "../shared/Container";
 import SectionTitle from "../shared/SectionTitle";
-import icon1 from "@/assets/icons/icon1.png";
-import icon2 from "@/assets/icons/icon2.png";
-import icon3 from "@/assets/icons/icon3.png";
-import icon4 from "@/assets/icons/icon4.png";
-import icon5 from "@/assets/icons/icon5.png";
-import icon6 from "@/assets/icons/icon6.png";
-
 const chooseCards = [
   {
-    title: "Book with Arabic Language",
+    title: "Integrity First",
     description:
-      "Full Arabic support makes booking easy and inviting for those more comfortable in Arabic.",
-    image: icon1,
+      "We value transparency in every deal. Our contract marketplace is built for clarity , not confusion.",
+    image: ChooseIcon1,
   },
   {
     title: "Trust and Transparency",
     description:
       "Verified listings, transparent profiles, and direct communication make customers feel secure.",
-    image: icon2,
+    image: ChooseIcon2,
   },
   {
-    title: "Locally Focused Rewards",
+    title: "Growth-Minded Platform",
     description:
-      "The loyalty program includes rewards and benefits tailored to Arab Israelis, with special offers around popular vacation periods.",
-    image: icon3,
+      "We're here to support your journey - whether you're scaling your portfolio or seeking your next investment-ready contract.",
+    image: ChooseIcon3,
   },
   {
-    title: "Family and Privacy-Focused Accommodations",
+    title: "Collaborative Approach",
     description:
-      "Our properties prioritize privacy and family-friendly environments, meeting specific customer needs.",
-    image: icon4,
+      "We believe in building long-term partnerships - not just transactions.",
+    image: ChooseIcon4,
   },
   {
-    title: "Personalized Customer Service",
+    title: "Adaptive by Nature",
     description:
-      "Arabic-speaking customer service that responds to questions quickly and professionally, improving customer trust.",
-    image: icon5,
+      "Markets shift. We stay nimble to support how you search, evaluate, and engage.",
+    image: ChooseIcon5,
   },
   {
-    title: "Community and Cultural Connection",
+    title: "Numbers That Matter",
     description:
-      "Through campaigns and partnerships with local influencers, we’re part of the community, understanding and speaking their language.",
-    image: icon6,
+      "Each opportunity comes with essential deal data—so you can independently evaluate and move forward on your terms.",
+    image: ChooseIcon6,
   },
 ];
 
@@ -54,10 +55,13 @@ const WhyChooseUs = () => {
         {chooseCards.map((card, index) => (
           <div
             key={index}
-            className="flex flex-col gap-4 p-4 bg-white rounded-2xl shadow-[0px_8px_24px_0px_rgba(0,66,153,0.08)]"
+            className="flex flex-col gap-4 pb-8 p-6 bg-white rounded-2xl shadow-[0px_8px_24px_0px_rgba(0,66,153,0.08)]"
           >
-            <img src={card.image} alt={card.title} className="size-[54px]" />
-            <h3 className="text-xl text-[#1D2635] font-semibold">{card.title}</h3>
+            {/* <img src={card.image} alt={card.title} className="size-[54px]" /> */}
+            {<card.image className="h-[56px] w-fit" />}
+            <h3 className="text-xl text-[#1D2635] font-semibold">
+              {card.title}
+            </h3>
             <p className="text-[#6A7283] font-medium">{card.description}</p>
           </div>
         ))}
